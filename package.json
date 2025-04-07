@@ -3,21 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "16.x",  // Netlify will use Node 16 (most stable for React)
+    "node": "16.x",  // Forces Netlify to use Node 16
     "npm": ">=8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build", // Mac/Linux fix
+    "build": "react-scripts build",  // Netlify will handle OpenSSL via env vars
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",  // Lock to stable version
+    "react-scripts": "5.0.1",  // Stable version
     "web-vitals": "^2.1.4"
-    // Keep your other dependencies here!
   },
   "browserslist": {
     "production": [
